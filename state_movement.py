@@ -14,6 +14,7 @@ def generate_graph(df, land_type):
 
 
 def grid(df):
+    sns.set_style("white")
     g = sns.FacetGrid(df, col='county', hue='county', col_wrap=3, )
     g = g.map(plt.plot, 'Date', 'Geotweets-based Mobility Index (GMI)')
     g = g.map(plt.fill_between, 'Date', 'Geotweets-based Mobility Index (GMI)', alpha=0.2).set_titles("{col_name} country")
